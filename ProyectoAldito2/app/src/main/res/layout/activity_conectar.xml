@@ -33,7 +33,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/btnListar"
         android:layout_marginTop="24dp"
-        android:text="Discoverable"
+        android:text="Buscar Dispositivos"
         tools:layout_editor_absoluteX="245dp"
         tools:layout_editor_absoluteY="26dp" />
 
@@ -51,10 +51,19 @@
     <ListView
         android:id="@+id/lvListar"
         android:layout_width="342dp"
-        android:layout_height="324dp"
+        android:layout_height="231dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="107dp"
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="159dp" />
+
+    <Button
+        android:id="@+id/btnConecCarri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:text="Conectar con Carrito" />
 </RelativeLayout>

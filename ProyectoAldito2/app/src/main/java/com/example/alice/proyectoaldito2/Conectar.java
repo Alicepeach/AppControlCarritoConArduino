@@ -16,9 +16,11 @@ import java.util.Set;
 
 public class Conectar extends AppCompatActivity {
 
-    Button btnOn, btnOff, btnDisc, btnList;
+    Button btnOn, btnOff, btnDisc, btnList, btnBuscarCarrito;
     BluetoothAdapter bluetoothAdapter;
     ListView list;
+
+    String DEVICE_ADDRESS = "98:B3:32:21:38:2F";
 
     private static final int REQUEST_ENABLE = 0;
     private static final int REQUEST_DISCOVERABLE = 0;
@@ -67,9 +69,7 @@ public class Conectar extends AppCompatActivity {
                 if(!bluetoothAdapter.isDiscovering()){
                     Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
                     startActivityForResult(intent, REQUEST_DISCOVERABLE);
-
                 }
-
             }
         });
 
@@ -88,7 +88,5 @@ public class Conectar extends AppCompatActivity {
                 list.setAdapter(arrayAdapter);
             }
         });
-
-
     }
 }

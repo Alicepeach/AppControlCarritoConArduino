@@ -24,6 +24,7 @@ public class MenuCarrito extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent irConectar = new Intent(MenuCarrito.this, Automatico.class);
+                startActivity(irConectar);
             }
         });
 
@@ -31,6 +32,7 @@ public class MenuCarrito extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent irConectar = new Intent(MenuCarrito.this, Manual.class);
+                startActivity(irConectar);
             }
         });
 
