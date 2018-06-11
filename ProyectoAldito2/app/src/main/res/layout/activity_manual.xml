@@ -7,22 +7,23 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:background="@drawable/fondo"
     tools:context=".Manual">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:text="Forward"
         android:id="@+id/forward_btn"
-        android:layout_marginTop="70dp"
+        android:layout_width="102dp"
+        android:layout_height="80dp"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
         android:layout_toLeftOf="@+id/forward_right_btn"
-        android:layout_toStartOf="@+id/forward_right_btn" />
+        android:layout_toStartOf="@+id/forward_right_btn"
+        android:text="Adelante" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="80dp"
-        android:text="forward&#10;LEFT"
+        android:text="Izquierda"
         android:id="@+id/forward_left_btn"
         android:layout_below="@+id/forward_btn"
         android:layout_toLeftOf="@+id/forward_btn"
@@ -31,26 +32,27 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="80dp"
-        android:text="forward&#10;RIGHT"
+        android:text="Derecha"
         android:id="@+id/forward_right_btn"
         android:layout_above="@+id/reverse_btn"
         android:layout_toRightOf="@+id/reverse_btn"
         android:layout_toEndOf="@+id/reverse_btn" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:text="REVERSE"
         android:id="@+id/reverse_btn"
+        android:layout_width="102dp"
+        android:layout_height="80dp"
         android:layout_below="@+id/forward_left_btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:text="Reversa" />
 
     <Button
+        android:id="@+id/bluetooth_connect_btn"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Connect to Bluetooth Device"
-        android:id="@+id/bluetooth_connect_btn"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="156dp"
+        android:text="Conectar con Carrito" />
 </RelativeLayout>

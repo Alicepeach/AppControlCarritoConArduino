@@ -23,7 +23,6 @@
         <activity android:name=".Automatico" />
         <activity android:name=".Manual" />
         <activity android:name=".Conectar" />
-        <activity android:name=".Prueba"></activity>
     </application>
 
 </manifest>

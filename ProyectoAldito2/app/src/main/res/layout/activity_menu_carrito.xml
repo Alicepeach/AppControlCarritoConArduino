@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuCarrito"
-    android:background="#FFF">
+    android:background="@drawable/fondo">
 
 
     <TextView
@@ -13,47 +13,52 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="47dp"
+        android:background="CCFFFF"
         android:fontFamily="serif-monospace"
-        android:textStyle="bold"
         android:text="Bienvenido"
         android:textColor="#000"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnConectar"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="221dp"
+        android:layout_marginBottom="229dp"
+        android:background="@drawable/Rectangle"
         android:text="Conectar" />
 
     <Button
         android:id="@+id/btnManual"
-        android:layout_width="117dp"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="217dp"
+        android:background="@drawable/Rectangle"
         android:text="Manual" />
 
     <Button
         android:id="@+id/btnAutomatico"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="130dp"
+        android:background="@drawable/Rectangle"
         android:text="Automático" />
 
     <Button
         android:id="@+id/btnSalir"
-        android:layout_width="107dp"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="129dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/Rectangle"
         android:text="Salir" />
 
 </RelativeLayout>
