@@ -2,6 +2,7 @@ package com.example.alice.proyectoaldito2;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +12,11 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.UUID;
 
 public class Conectar extends AppCompatActivity {
 
@@ -20,7 +24,13 @@ public class Conectar extends AppCompatActivity {
     BluetoothAdapter bluetoothAdapter;
     ListView list;
 
+    private BluetoothDevice device;
+    private BluetoothSocket socket;
+    private OutputStream outputStream;
+
     String DEVICE_ADDRESS = "98:B3:32:21:38:2F";
+    private final UUID PORT_UUID = UUID.randomUUID();
+
 
     private static final int REQUEST_ENABLE = 0;
     private static final int REQUEST_DISCOVERABLE = 0;
@@ -76,6 +86,7 @@ public class Conectar extends AppCompatActivity {
         btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //Vamos a crear un arrayList de todos los dispositivos que existen.
                 Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
 
@@ -83,10 +94,55 @@ public class Conectar extends AppCompatActivity {
 
                 for(BluetoothDevice bt : pairedDevices){
                     devices.add(bt.getName());
+
+                    if(bt.getAddress().equals(DEVICE_ADDRESS))
+                    {
+                        device = bt;
+                        //found = true;
+                        Toast.makeText(getApplicationContext(), "Se ha encontrado el dispositivo", Toast.LENGTH_SHORT).show();
+                        }
                 }
+
                 ArrayAdapter arrayAdapter = new ArrayAdapter(Conectar.this, android.R.layout.simple_list_item_1, devices);
                 list.setAdapter(arrayAdapter);
             }
         });
+
+
+      /*  btnBuscarCarrito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Vamos a crear un arrayList de todos los dispositivos que existen.
+                Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
+
+                ArrayList<String> devices = new ArrayList<>();
+
+                for(BluetoothDevice bt : pairedDevices){
+
+                    if(bt.getAddress().equals(DEVICE_ADDRESS))
+                    {
+                        device = bt;
+                        //found = true;
+                        Toast.makeText(getApplicationContext(), "Se ha encontrado el dispositivo", Toast.LENGTH_SHORT).show();
+                        try
+                        {
+                            socket = device.createRfcommSocketToServiceRecord(PORT_UUID); //Creates a socket to handle the outgoing connection
+                            socket.connect();
+                            Toast.makeText(getApplicationContext(),
+                                    "Se ha conectado correctamente", Toast.LENGTH_LONG).show();
+                        }
+                        catch(IOException e)
+                        {
+                            Toast.makeText(getApplicationContext(),
+                                    "No se quiere conectar esta madre", Toast.LENGTH_LONG).show();
+                            e.printStackTrace();
+                            //connected = false;
+                        }
+                        break;
+                    }
+                }
+            }
+        });private ConnectedThread mConnectedThread;*/
     }
 }

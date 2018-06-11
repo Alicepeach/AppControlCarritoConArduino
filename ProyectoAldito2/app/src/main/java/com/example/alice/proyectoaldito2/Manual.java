@@ -9,23 +9,25 @@ import android.bluetooth.BluetoothAdapter;
         import android.support.v7.app.AppCompatActivity;
         import android.view.MotionEvent;
         import android.view.View;
-        import android.widget.Button;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
         import android.widget.Toast;
 
         import java.io.IOException;
         import java.io.OutputStream;
-        import java.util.Set;
+import java.util.ArrayList;
+import java.util.Set;
         import java.util.UUID;
 
 public class Manual extends AppCompatActivity {
-    private final String DEVICE_ADDRESS = "98:B3:32:21:38"; //MAC Address of Bluetooth Module
-    private final UUID PORT_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+    private final String DEVICE_ADDRESS = "98:B3:32:31:32:46"; //MAC Address of Bluetooth Module
+    private final UUID PORT_UUID = UUID.randomUUID();
 
     private BluetoothDevice device;
     private BluetoothSocket socket;
     private OutputStream outputStream;
 
-    Button forward_btn, forward_left_btn, forward_right_btn, reverse_btn, reverse_left_btn, reverse_right_btn, bluetooth_connect_btn;
+    Button btnAdelante, btnDerecha, btnIzquierda, btnReversa, bluetooth_connect_btn;
 
     String command; //string variable that will store value to be transmitted to the bluetooth module
 
@@ -36,15 +38,15 @@ public class Manual extends AppCompatActivity {
         setContentView(R.layout.activity_manual);
 
         //declaration of button variables
-        forward_btn = (Button) findViewById(R.id.forward_btn);
-        forward_left_btn = (Button) findViewById(R.id.forward_left_btn);
-        forward_right_btn = (Button) findViewById(R.id.forward_right_btn);
-        reverse_btn = (Button) findViewById(R.id.reverse_btn);
+        btnAdelante = (Button) findViewById(R.id.forward_btn);
+        btnDerecha = (Button) findViewById(R.id.forward_left_btn);
+        btnIzquierda = (Button) findViewById(R.id.forward_right_btn);
+        btnReversa = (Button) findViewById(R.id.reverse_btn);
         bluetooth_connect_btn = (Button) findViewById(R.id.bluetooth_connect_btn);
 
 
         //OnTouchListener code for the forward button (button long press)
-        forward_btn.setOnTouchListener(new View.OnTouchListener() {
+        btnAdelante.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
@@ -81,7 +83,7 @@ public class Manual extends AppCompatActivity {
         });
 
         //OnTouchListener code for the reverse button (button long press)
-        reverse_btn.setOnTouchListener(new View.OnTouchListener(){
+        btnReversa.setOnTouchListener(new View.OnTouchListener(){
             @Override
             public boolean onTouch(View v, MotionEvent event)
             {
@@ -116,7 +118,7 @@ public class Manual extends AppCompatActivity {
         });
 
         //OnTouchListener code for the forward left button (button long press)
-        forward_left_btn.setOnTouchListener(new View.OnTouchListener(){
+        btnDerecha.setOnTouchListener(new View.OnTouchListener(){
             @Override
             public boolean onTouch(View v, MotionEvent event)
             {
@@ -151,7 +153,7 @@ public class Manual extends AppCompatActivity {
         });
 
         //OnTouchListener code for the forward right button (button long press)
-        forward_right_btn.setOnTouchListener(new View.OnTouchListener(){
+        btnIzquierda.setOnTouchListener(new View.OnTouchListener(){
             @Override
             public boolean onTouch(View v, MotionEvent event)
             {
@@ -189,10 +191,12 @@ public class Manual extends AppCompatActivity {
         bluetooth_connect_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getApplicationContext(), "Los odio a tods alv", Toast.LENGTH_SHORT).show();
                 if(BTinit())
                 {
+                    Toast.makeText(getApplicationContext(), "Los odio a tods alv2", Toast.LENGTH_SHORT).show();
                     BTconnect();
+
                 }
 
             }
@@ -241,6 +245,7 @@ public class Manual extends AppCompatActivity {
                 {
                     device = iterator;
                     found = true;
+                    Toast.makeText(getApplicationContext(), "Se ha encontrado el dispositivo", Toast.LENGTH_SHORT).show();
                     break;
                 }
             }
@@ -259,10 +264,12 @@ public class Manual extends AppCompatActivity {
             socket.connect();
 
             Toast.makeText(getApplicationContext(),
-                    "Connection to bluetooth device successful", Toast.LENGTH_LONG).show();
+                    "Se ha conectado correctamente", Toast.LENGTH_LONG).show();
         }
         catch(IOException e)
         {
+            Toast.makeText(getApplicationContext(),
+                    "No se quiere conectar esta madre", Toast.LENGTH_LONG).show();
             e.printStackTrace();
             connected = false;
         }
