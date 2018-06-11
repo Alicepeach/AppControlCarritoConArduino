@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Conectar">
+
+    <Button
+        android:id="@+id/btnOn"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnOff"
+        android:layout_alignTop="@+id/btnDisc"
+        android:text="Encender"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <Button
+        android:id="@+id/btnOff"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lvListar"
+        android:layout_alignTop="@+id/btnListar"
+        android:text="Apagar"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <Button
+        android:id="@+id/btnDisc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/btnListar"
+        android:layout_marginTop="24dp"
+        android:text="Discoverable"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <Button
+        android:id="@+id/btnListar"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_alignEnd="@+id/lvListar"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:text="Listar"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <ListView
+        android:id="@+id/lvListar"
+        android:layout_width="342dp"
+        android:layout_height="324dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="159dp" />
+</RelativeLayout>

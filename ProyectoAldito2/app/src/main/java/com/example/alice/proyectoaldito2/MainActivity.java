@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         start = (ImageView) findViewById(R.id.startMarciano);
 
-
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

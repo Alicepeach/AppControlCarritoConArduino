@@ -16,12 +16,13 @@
         android:src="@drawable/marciano" />
 
     <TextView
-        android:id="@+id/txtPresionaElMarciano"
+        android:id="@+id/txtPresiona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="154dp"
+        android:textColor="#FFF"
         android:text="Presiona el Marciano para iniciar"
         android:textSize="18dp"/>
 
